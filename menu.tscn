@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://73sv2vhscdad"]
+
+[ext_resource type="Script" uid="uid://c17l2tft0s75l" path="res://settings.gd" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://bu3lj2o6yi4t0" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="PackedScene" uid="uid://bkf0s7twxluh4" path="res://parallax_background.tscn" id="3_mae5d"]
+
+[node name="Menu" type="Node2D" unique_id=1817991287]
+script = ExtResource("1_ouk20")
+
+[node name="Play" type="Button" parent="." unique_id=1621336063]
+offset_left = 380.0
+offset_top = 130.0
+offset_right = 713.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Quit" type="Button" parent="." unique_id=379846379]
+offset_left = 380.0
+offset_top = 410.0
+offset_right = 713.0
+offset_bottom = 530.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="Settings" type="Button" parent="." unique_id=603199050]
+offset_left = 380.0
+offset_top = 268.0
+offset_right = 713.0
+offset_bottom = 388.0
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+script = ExtResource("1_lti8b")
+
+[node name="ParallaxBackground" parent="." unique_id=1760592743 instance=ExtResource("3_mae5d")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
